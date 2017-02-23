@@ -2,12 +2,13 @@ from __future__ import print_function
 from os.path import join
 from os import listdir
 import numpy as np
+import common
 
 data_dir='/home/sym-gtu/Data/MSR/MSRAction3DSkeletonReal3D'
 
 def read():
-    print('Loading NTU 3D Data, data directory %s' % data_dir)
-    data,labels,lens=[],[],[]
+    print('Loading MSR 3D Data, data directory %s' % data_dir)
+    data,labels,lens,subjects=[],[],[],[]
     filenames = []
     documents = [join(data_dir, d)
                  for d in sorted(listdir(data_dir))]
@@ -16,25 +17,20 @@ def read():
 
 
     for file in filenames:
-        action=np.loadtxt(file)[:,:3]
-        print(action.shape)
+        action=np.loadtxt(file)[:,:3].flatten()
         data.append(action)
-        labels.append(full_fname2_str(file))
+        labels.append(common.full_fname2_str(data_dir,file,'a'))
         frame_size = len(action) / 60 # 20 iskeleton num x,y,z 3D points
         lens.append(frame_size)
-
+        subjects.append(common.full_fname2_str(data_dir,file,'s'))
+        #print(action.shape,frame_size)
     data = np.asarray(data)
     labels = np.asarray(labels)
     lens = np.asarray(lens)
-
+    subjects = np.asarray(subjects)
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
-    return (data, labels, lens)
 
-def full_fname2_str(fname):
-    fnametostr = ''.join(fname).replace(data_dir, '')
-    ind = int(fnametostr.index('a'))
-    label = int(fnametostr[ind + 1:ind + 3])
-    return label - 1
+    return common.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)
 
 
 

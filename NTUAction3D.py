@@ -2,6 +2,7 @@ from __future__ import print_function
 from os.path import join
 from os import listdir
 import numpy as np
+import common
 
 data_dir='/home/sym-gtu/Data/NTU/NTUDemo/'
 
@@ -39,29 +40,22 @@ def read():
                         a_frame.append(float(jointinfo[2]))  # z
                     if (b == 0):  # take one subject move
                         action.append(a_frame)
-                        one_act_label.append(full_fname2_str(file))
+                        one_act_label.append(common.full_fname2_str(data_dir,file,'A'))
 
 
             lens.append(len(action))
-            labels.append(full_fname2_str(file))
+            labels.append(common.full_fname2_str(data_dir,file,'A'))
             data.append(action)
             action_id += 1
 
 
     data = np.asarray(data)
+    #data=data.reshape(action_id,)
     labels = np.asarray(labels)
     lens = np.asarray(lens)
 
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
-    return (data, labels, lens)
-
-
-
-def full_fname2_str(fname):
-    fnametostr = ''.join(fname).replace(data_dir, '')
-    ind = int(fnametostr.index('A'))
-    label = int(fnametostr[ind + 1:ind + 4])
-    return label - 1
-
+    return common.test_train_splitter_SYM_NTU(data, labels, lens)
 
 read()
+
