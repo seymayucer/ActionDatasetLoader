@@ -29,6 +29,7 @@ def read():
     data = np.asarray(dataset.data)
     labels = np.asarray(dataset.target)
     lens = np.asarray(lens)
+    print(labels)
 
     print('data shape: %s, label shape: %s,lens shape %s'%(data.shape,labels.shape,lens.shape))
     return (data,labels,lens)
