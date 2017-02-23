@@ -1,13 +1,12 @@
-DataReader
-4 datasets reader
-these are;
+#DataReader
+Public available human action datasets reader for everyone in python
 
-SYM3DActions : 
+##SYM3DActions : 
     
-    508 actions
-    8  subjects
-    14   act type 
-    25  joints
+    * 508 actions
+    * 8  subjects
+    * 14   act type 
+    * 25  joints
         
         Kollari Acip Kapama
         Sag El Sallama 
@@ -21,14 +20,14 @@ SYM3DActions :
         Sol El Sallama
         Saga Sola Bel Esnetme
 
-NTU RGB+D : 
+##NTU RGB+D : 
 
-    56,880 actions
-    #  subjects
-    60   act type 
-    25  joints
-    drink water
+    * 56,880 actions
+    * #  subjects
+    * 60   act type 
+    * 25  joints
     
+        drink water
         eat meal/snack
         brushing teeth
         brushing hair
@@ -87,16 +86,14 @@ NTU RGB+D :
         touch other person's pocket
         handshaking
         walking towards each other
-        walking apart from each other
-    
+        walking apart from each other   
         
+##MSRAction3D:
         
-MSRAction3D:
-        
-    567 actions
-    10  subjects
-    20  type act
-    20  joints
+    * 567 actions
+    * 10  subjects
+    * 20  type act
+    * 20  joints
     
        high arm wave
        horizontal arm wave
@@ -119,12 +116,12 @@ MSRAction3D:
        golf swing
        pick up & throw
 
-Florence_3D_Actions :
+##Florence_3D_Actions :
 
-    215 actions
-    10  subjects
-    9   act type 
-    15  joints
+    * 215 actions
+    * 10  subjects
+    * 9   act type 
+    * 15  joints
         
         wave, 
         drink from a bottle
