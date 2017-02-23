@@ -123,13 +123,13 @@ Public available human action datasets reader for everyone in python
 * 9   act type 
 * 15  joints
         
-- wave, 
-drink from a bottle
-answer phone
-clap 
-tight lace 
-sit down 
-stand up 
-read watch 
-bow
+        wave, 
+        drink from a bottle
+        answer phone
+        clap 
+        tight lace 
+        sit down 
+        stand up 
+        read watch 
+        bow
 
