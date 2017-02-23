@@ -1,4 +1,4 @@
-#DataReader
+#Human Action Datasets Reader
 Public available human action datasets reader for everyone in python
 
 ##SYM3DActions : 
