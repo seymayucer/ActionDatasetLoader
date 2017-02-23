@@ -95,26 +95,26 @@ Public available human action datasets reader for everyone in python
 * 20  type act
 * 20  joints
     
-       high arm wave
-       horizontal arm wave
-       hammer
-       hand catch
-       forward punch
-       high throw
-       draw x
-       draw tick
-       draw circle
-       hand clap
-       two hand wave
-       side-boxing
-       bend
-       forward kick
-       side kick
-       jogging
-       tennis swing
-       tennis serve
-       golf swing
-       pick up & throw
+        high arm wave
+        horizontal arm wave
+        hammer
+        hand catch
+        forward punch
+        high throw
+        draw x
+        draw tick
+        draw circle
+        hand clap
+        two hand wave
+        side-boxing
+        bend
+        forward kick
+        side kick
+        jogging
+        tennis swing
+        tennis serve
+        golf swing
+        pick up & throw
 
 ##Florence_3D_Actions :
 
