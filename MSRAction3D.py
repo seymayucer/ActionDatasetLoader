@@ -18,10 +18,12 @@ def read():
 
     for file in filenames:
         action=np.loadtxt(file)[:,:3].flatten()
-        data.append(action)
+
         labels.append(common.full_fname2_str(data_dir,file,'a'))
         frame_size = len(action) / 60 # 20 iskeleton num x,y,z 3D points
         lens.append(frame_size)
+        action=np.asarray(action).reshape(frame_size,60)
+        data.append(action)
         subjects.append(common.full_fname2_str(data_dir,file,'s'))
         #print(action.shape,frame_size)
     data = np.asarray(data)
@@ -31,7 +33,3 @@ def read():
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
 
     return common.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)
-
-
-
-read()

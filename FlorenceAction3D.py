@@ -8,17 +8,16 @@ def read():
     data, labels, lens,subjects = [], [], [],[]
     florence=np.loadtxt(data_dir)
 
-    label_array=florence[:,1:2].flatten()
     frame_len=florence[:,0:1].flatten()
+    label_array = florence[:, 1:2].flatten()
     subjects_array=florence[:,2:3].flatten()
     counts=collections.Counter(frame_len)
 
 
     first,second=0,0
     for frame_num in counts:
-        #print(frame_num,counts[frame_num])
         second+=counts[frame_num]
-        data.append(florence[first:second].flatten())
+        data.append(florence[first:second][:,3:])
         lens.append(counts[frame_num])
         labels.append(int(label_array[first]))
         subjects.append(int(subjects_array[first]))
@@ -31,5 +30,3 @@ def read():
 
     print('data shape: %s, label shape: %s, action lens shape %s: %s'%(data.shape,labels.shape,lens.shape,subjects.shape))
     return common.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)
-
-read()

@@ -45,17 +45,17 @@ def read():
 
             lens.append(len(action))
             labels.append(common.full_fname2_str(data_dir,file,'A'))
+            action = np.asarray(action).reshape(len(action),75 )
             data.append(action)
             action_id += 1
 
 
     data = np.asarray(data)
-    #data=data.reshape(action_id,)
+
     labels = np.asarray(labels)
     lens = np.asarray(lens)
 
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
     return common.test_train_splitter_SYM_NTU(data, labels, lens)
 
-read()
 

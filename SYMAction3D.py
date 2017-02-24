@@ -33,8 +33,3 @@ def read():
     print('data shape: %s, label shape: %s,lens shape %s'%(data.shape,labels.shape,lens.shape))
 
     return common.test_train_splitter_SYM_NTU(data, labels, lens)
-
-
-
-
-read()

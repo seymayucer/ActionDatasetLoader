@@ -10,15 +10,18 @@ def full_fname2_str(data_dir,fname,sep_char):
 def test_train_splitter_MSR_FLOR(subject_id, data, labels, lens, subject):
     print('Test-Train Cross Subject Splitting')
     indices=np.argwhere(subject==subject_id)
-
     other_indices = np.ones(len(subject), dtype=bool)
     other_indices[indices]=False
+    indices=indices.flatten()
+
     train_data = data[other_indices]
-    train_labels = labels[other_indices]
-    train_lens = lens[other_indices]
+    train_labels = labels[other_indices].flatten()
+    train_lens = lens[other_indices].flatten()
+
     test_data = data[indices]
-    test_labels = labels[indices]
-    test_lens = lens[indices]
+    test_labels = labels[indices].flatten()
+    test_lens = lens[indices].flatten()
+
 
     dataset = bunch
     dataset.train_data, dataset.train_labels, dataset.train_lens = train_data, train_labels, train_lens
