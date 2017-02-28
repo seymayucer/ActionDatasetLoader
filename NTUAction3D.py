@@ -5,7 +5,8 @@ import numpy as np
 import common
 
 data_dir='/home/sym-gtu/Data/NTU/NTUDemo/'
-
+# dir='/../'
+# print(listdir(dir))
 def read():
     print('Loading NTU 3D Data, data directory %s' % data_dir)
     data,labels,lens=[],[],[]
@@ -39,6 +40,8 @@ def read():
                         a_frame.append(float(jointinfo[1]))  # y
                         a_frame.append(float(jointinfo[2]))  # z
                     if (b == 0):  # take one subject move
+                        a_frame=common.frame_normalizer(np.asarray(a_frame))
+                        #print(a_frame)
                         action.append(a_frame)
                         one_act_label.append(common.full_fname2_str(data_dir,file,'A'))
 
@@ -51,11 +54,16 @@ def read():
 
 
     data = np.asarray(data)
-
     labels = np.asarray(labels)
     lens = np.asarray(lens)
 
+    normalized_data=common.dataset_normalizer(data)
+
+    with open('ntu_normalized_data.csv', 'wb') as f:
+        np.savetxt(f, data[0], fmt='%.5f')
+    np.savetxt('ntu_normalized_label.csv', labels)
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
-    return common.test_train_splitter_SYM_NTU(data, labels, lens)
+    return common.test_train_splitter_SYM_NTU(normalized_data, labels, lens)
 
 
+#read()

@@ -3,6 +3,7 @@ import collections
 import common
 data_dir='/home/sym-gtu/Data/Florence_3D_Actions/Florence_dataset_WorldCoordinates.txt'
 
+
 def read():
     print('Loading Florence Data, data directory %s'%data_dir)
     data, labels, lens,subjects = [], [], [],[]

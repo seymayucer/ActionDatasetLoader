@@ -5,7 +5,7 @@ def full_fname2_str(data_dir,fname,sep_char):
     fnametostr = ''.join(fname).replace(data_dir, '')
     ind = int(fnametostr.index(sep_char))
     label = int(fnametostr[ind + 1:ind + 3])
-    return label - 1
+    return label
 
 def test_train_splitter_MSR_FLOR(subject_id, data, labels, lens, subject):
     print('Test-Train Cross Subject Splitting')
@@ -53,3 +53,32 @@ def test_train_splitter_SYM_NTU(data,labels,lens):
     print ('Test Size', dataset.test_data.shape, dataset.test_labels.shape, dataset.test_lens.shape)
 
     return dataset
+
+
+def frame_normalizer(frame):
+    assert frame.shape[0]==75
+    frame=frame.reshape(25,3)
+    spine_mid=frame[1]
+    j=0
+    for joint in frame:
+        frame[j]=joint-spine_mid
+        j+=1
+
+    return(list(frame.flatten()))
+
+def dataset_normalizer(data):
+    min_list=[]
+    max_list=[]
+    for act in data:
+        max_list.append(np.amax(act))
+        min_list.append(np.amin(act))
+
+    print('min num:',min(min_list),'max num',max(max_list))
+    min_num=min(min_list)
+    max_num=max(max_list)
+    i =0
+    for act in data:
+        act=(act+abs(min_num))/(max_num+abs(min_num))
+        data[i]=act
+        i+=0
+    return data
