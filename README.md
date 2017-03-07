@@ -5,8 +5,8 @@ Public available human action datasets reader for everyone in python
     
 * 508 actions
 * 8  subjects
-* 14   act type 
 * 25  joints
+* 14   act type 
         
         Kollari Acip Kapama
         Sag El Sallama 
@@ -24,8 +24,8 @@ Public available human action datasets reader for everyone in python
 
 * 56,880 actions
 * - subjects
-* 60   act type 
 * 25  joints
+* 60   act type 
     
         drink water
         eat meal/snack
@@ -92,8 +92,8 @@ Public available human action datasets reader for everyone in python
         
 * 567 actions
 * 10  subjects
-* 20  type act
 * 20  joints
+* 20  type act
     
         high arm wave
         horizontal arm wave
@@ -120,8 +120,8 @@ Public available human action datasets reader for everyone in python
 
 * 215 actions
 * 10  subjects
-* 9   act type 
 * 15  joints
+* 9   act type 
         
         wave, 
         drink from a bottle
