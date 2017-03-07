@@ -2,7 +2,7 @@ from __future__ import print_function
 from os.path import join
 from os import listdir
 import numpy as np
-import common
+import action_data_lib
 
 data_dir='/home/sym-gtu/Data/MSR/MSRAction3DSkeletonReal3D'
 
@@ -19,12 +19,12 @@ def read():
     for file in filenames:
         action=np.loadtxt(file)[:,:3].flatten()
 
-        labels.append(common.full_fname2_str(data_dir,file,'a'))
+        labels.append(action_data_lib.full_fname2_str(data_dir, file, 'a'))
         frame_size = len(action) / 60 # 20 iskeleton num x,y,z 3D points
         lens.append(frame_size)
         action=np.asarray(action).reshape(frame_size,60)
         data.append(action)
-        subjects.append(common.full_fname2_str(data_dir,file,'s'))
+        subjects.append(action_data_lib.full_fname2_str(data_dir, file, 's'))
         #print(action.shape,frame_size)
     data = np.asarray(data)
     labels = np.asarray(labels)
@@ -32,4 +32,4 @@ def read():
     subjects = np.asarray(subjects)
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
 
-    return common.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)
+    return action_data_lib.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)
