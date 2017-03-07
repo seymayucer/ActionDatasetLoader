@@ -87,14 +87,13 @@ def dataset_normalizer(data):
 
     return np.asarray(new_data)
 
-
+#ntu actions
 def get_action_name(label):
-
     act_names='drinkWater', 'eat meal-snack', 'brushing teeth' , 'brushing hair' , 'drop' , 'pickup','throw','sitting down','standing up (from sitting position)','clapping','reading','writing','tear up paper','wear jacket','take off jacket','wear a shoe','take off a shoe','wear on glasses','take off glasses','put on a hat-cap','take off a hat-cap','cheer up','hand waving','kicking something','put something inside pocket - take out something from pocket','hopping (one foot jumping)','jump up','make a phone call-answer phone',' ' \
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     'playing with phone-tablet' , 'typing on a keyboard','pointing to something with finger','taking a selfie','check time (from watch)','rub two hands together','nod head-bow','shake head','wipe face','salute','put the palms together','cross hands in front (say stop)','sneeze-cough','staggering','falling','touch head (headache)','touch chest (stomachache-heart pain)','touch back (backache)','touch neck (neckache)','nausea or vomiting condition','use a fan (with hand or paper)-feeling warm','punching-slapping other person','kicking other person','pushing other person','pat on back of other person','point finger at the other person','hugging other person','giving something to other person','touch other persons pocket','handshaking','walking towards each other','walking apart from each other'
     print(label, act_names[label])
     return str(act_names[label])
-
+#kinect 2 joints
 def get_joint_names(joint_id):
     joints = 'SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ElbowLeft', 'WristLeft', 'HandLeft', 'ShoulderRight', 'ElbowRight', 'WristRight', 'HandRight', 'HipLeft', 'KneeLeft', 'AnkleLeft', 'FootLeft', 'HipRight', 'KneeRight', 'AnkleRight', 'FootRight', 'SpineShoulder', 'HandTipLeft', 'ThumbLeft', 'HandTipRight', 'ThumbRight'
     return str(joints[joint_id])
