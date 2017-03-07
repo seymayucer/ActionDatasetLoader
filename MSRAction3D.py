@@ -4,7 +4,7 @@ from os import listdir
 import numpy as np
 import action_data_lib
 
-data_dir='/home/sym-gtu/Data/MSR/MSRAction3DSkeletonReal3D'
+data_dir='Data/MSR/MSRAction3DSkeletonReal3D'
 
 def read():
     print('Loading MSR 3D Data, data directory %s' % data_dir)
@@ -33,3 +33,4 @@ def read():
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
 
     return action_data_lib.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)
+
