@@ -3,9 +3,9 @@ from __future__ import print_function
 import sklearn,bunch
 import numpy as np
 from sklearn import datasets
-import action_data_lib
+import data_utils
 #loads files in recursively,loads them in bunch object
-data_dir = 'Data/SYMAct3D'
+data_dir = '/home/sym-gtu/Data/SYMAct3D'
 def read():
     print('Loading SYMAct 3D Data, data directory %s' % data_dir)
     data, labels, lens = [], [], []
@@ -32,7 +32,4 @@ def read():
 
     print('data shape: %s, label shape: %s,lens shape %s'%(data.shape,labels.shape,lens.shape))
 
-    return action_data_lib.test_train_splitter_SYM_NTU(data, labels, lens)
-
-
-read()
+    return data_utils.test_train_splitter_SYM_NTU(data, labels, lens)

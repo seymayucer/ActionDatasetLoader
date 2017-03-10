@@ -1,7 +1,7 @@
 import numpy as np
 import collections
-import action_data_lib
-data_dir='Data/Florence_3D_Actions/Florence_dataset_WorldCoordinates.txt'
+import data_utils
+data_dir='/home/sym-gtu/Data/Florence_3D_Actions/Florence_dataset_WorldCoordinates.txt'
 
 
 def read():
@@ -30,5 +30,4 @@ def read():
     subjects=np.asarray(subjects)
 
     print('data shape: %s, label shape: %s, action lens shape %s: %s'%(data.shape,labels.shape,lens.shape,subjects.shape))
-    return action_data_lib.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)
-
+    return data_utils.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)

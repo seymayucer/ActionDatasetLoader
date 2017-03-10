@@ -2,11 +2,10 @@ from __future__ import print_function
 from os.path import join
 from os import listdir
 import numpy as np
-import action_data_lib
+import data_utils
 
 data_dir='/home/sym-gtu/Data/NTU/NTUDemo/'
-# dir='/../'
-# print(listdir(dir))
+
 def read():
     print('Loading NTU 3D Data, data directory %s' % data_dir)
     data,labels,lens=[],[],[]
@@ -40,14 +39,14 @@ def read():
                         a_frame.append(float(jointinfo[1]))  # y
                         a_frame.append(float(jointinfo[2]))  # z
                     if (b == 0):  # take one subject move
-                        a_frame=action_data_lib.frame_normalizer(np.asarray(a_frame))
+                        a_frame=data_utils.frame_normalizer(np.asarray(a_frame))  #if you need
                         #print(a_frame)
                         action.append(a_frame)
-                        one_act_label.append(action_data_lib.full_fname2_str(data_dir, file, 'A'))
+                        one_act_label.append(data_utils.full_fname2_str(data_dir, file, 'A'))
 
 
             lens.append(len(action))
-            labels.append(action_data_lib.full_fname2_str(data_dir, file, 'A'))
+            labels.append(data_utils.full_fname2_str(data_dir, file, 'A'))
             action = np.asarray(action).reshape(len(action),75)
             data.append(action)
             action_id += 1
@@ -57,11 +56,10 @@ def read():
     labels = np.asarray(labels)
     lens = np.asarray(lens)
 
-    data=action_data_lib.dataset_normalizer(data)
-    # np.savetxt('ntu_normalized_data.csv',data[0],fmt='%.3f')
-    # np.savetxt('ntu_normalized_label.csv', labels,fmt='%d')
+    #if you need
+    data=data_utils.dataset_normalizer(data)
+
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
-    # print(data[0])
-    # print(labels)
-    return action_data_lib.test_train_splitter_SYM_NTU(data, labels, lens)
+
+    return data_utils.test_train_splitter_SYM_NTU(data, labels, lens)
 
