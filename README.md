@@ -7,21 +7,40 @@ Public available human action datasets reader for everyone in python
 * 8 subjects
 * 25 joints
 * 14 act type 
-
-        Kollari Acip Kapama (37) <- [act size]
-        Sag El Sallama (40)
-        Saga Sola Bel Esnetme (42)
+        
+        (turkish)
+        
+        Kolları Açıp Kapama (37) 
+        Sağ El Sallama (40)
+        Sağa Sola Bel Esnetme (42)
         Yürüme (32)
-        Ayak Esnetme sağ yada sol(25)
-        Ayak Esnetme sağ yada sol (27)
+        Ayak Esnetme sağ veya sol (25)
+        Ayak Esnetme sağ veya sol (27)
         Sol El Sallama (38)
-        One sag sol Adim Gitme (39)
-        Comelme (38)
+        One sağ sol Adim Gitme (39)
+        Çömelme (38)
         Sandalyede Oturup Kalkma (39)
-        Oturup Alkislama (39)
+        Oturup Alkışlama (39)
         Bel Cevirme (37)
-        Saga Sola 8 Adimlik Hareket (26)
-        Boyun Gevsetme (49)              
+        Sağa Sola 8 Adimlik Hareket (26)
+        Boyun Gevsetme (49)  
+
+        (english)
+        
+        Opening and Closing the Arms (37)
+        Right Handed Shaking (40)
+        Right and Left Waist Stretch (42)
+        Walking (32)
+        Bend the leg left or right (25)
+        Bend the leg left or right (27)
+        Left Handed Shaking (38)
+        One right-left step (39)
+        Crouching (38)
+        Standing on the Sandal Standing (39)
+        Sit and Applause (39)
+        Lower back (37)
+        Right and Left 8-Step Motion (26)
+        Neck Relaxation (49)          
     
 ##NTU RGB+D : 
 
