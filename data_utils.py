@@ -81,7 +81,7 @@ def dataset_normalizer(data):
     new_data=[]
     i =0
     for act in data:
-        act=(2*(act+abs(min_num))/(max_num+abs(min_num)))-1
+        act=(act+abs(min_num))/(max_num+abs(min_num))
         new_data.append(act)
         i += 0
 

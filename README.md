@@ -10,7 +10,7 @@ Public available human action datasets reader for everyone in python
 
         Kollari Acip Kapama (37) <- [act size]
         Sag El Sallama (40)
-        Kol Esnetme Saga Sola Bel Esnetme (42)
+        Saga Sola Bel Esnetme (42)
         Yürüme (32)
         Ayak Esnetme sağ yada sol(25)
         Ayak Esnetme sağ yada sol (27)
