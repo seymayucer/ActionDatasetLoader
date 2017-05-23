@@ -1,7 +1,7 @@
-#Human Action Datasets Reader
+# Human Action Datasets Reader
 Public available human action datasets reader for everyone in python
 
-##SYM3DActions : 
+## SYM3DActions : 
     
 * 508 actions
 * 8 subjects
@@ -42,7 +42,7 @@ Public available human action datasets reader for everyone in python
         Right and Left 8-Step Motion (26)
         Neck Relaxation (49)          
     
-##NTU RGB+D : 
+## NTU RGB+D : 
 
 * 56,880 actions
 * - subjects
@@ -110,7 +110,7 @@ Public available human action datasets reader for everyone in python
         walking towards each other
         walking apart from each other   
         
-##MSRAction3D:
+## MSRAction3D:
         
 * 567 actions
 * 10  subjects
@@ -138,7 +138,7 @@ Public available human action datasets reader for everyone in python
         golf swing
         pick up & throw
 
-##Florence_3D_Actions :
+## Florence_3D_Actions :
 
 * 215 actions
 * 10  subjects
