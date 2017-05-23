@@ -4,22 +4,25 @@ Public available human action datasets reader for everyone in python
 ##SYM3DActions : 
     
 * 508 actions
-* 8  subjects
-* 25  joints
-* 14   act type 
-        
-        Kollari Acip Kapama
-        Sag El Sallama 
-        One sag sol Adim Gitme 
-        Comelme
-        Sandalyede Oturup Kalkma
-        Oturup Alkislama
-        Bel Cevirme
-        Saga Sola 8 Adimlik Hareket
-        Boyun Gevsetme	
-        Sol El Sallama
-        Saga Sola Bel Esnetme
+* 8 subjects
+* 25 joints
+* 14 act type 
 
+        Kollari Acip Kapama (37) <- [act size]
+        Sag El Sallama (40)
+        Kol Esnetme Saga Sola Bel Esnetme (42)
+        Yürüme (32)
+        Ayak Esnetme sağ yada sol(25)
+        Ayak Esnetme sağ yada sol (27)
+        Sol El Sallama (38)
+        One sag sol Adim Gitme (39)
+        Comelme (38)
+        Sandalyede Oturup Kalkma (39)
+        Oturup Alkislama (39)
+        Bel Cevirme (37)
+        Saga Sola 8 Adimlik Hareket (26)
+        Boyun Gevsetme (49)              
+    
 ##NTU RGB+D : 
 
 * 56,880 actions
