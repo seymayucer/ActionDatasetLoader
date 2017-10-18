@@ -10,8 +10,8 @@ def read():
     florence=np.loadtxt(data_dir)
 
     frame_len=florence[:,0:1].flatten()
-    label_array = florence[:, 1:2].flatten()
-    subjects_array=florence[:,2:3].flatten()
+    subject_array = florence[:, 1:2].flatten()
+    label_array=florence[:,2:3].flatten()
     counts=collections.Counter(frame_len)
 
 
@@ -21,7 +21,7 @@ def read():
         data.append(florence[first:second][:,3:])
         lens.append(counts[frame_num])
         labels.append(int(label_array[first]))
-        subjects.append(int(subjects_array[first]))
+        subjects.append(int(subject_array[first]))
         first=second
 
     data=np.asarray(data)
