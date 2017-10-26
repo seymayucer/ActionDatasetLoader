@@ -1,12 +1,14 @@
 from __future__ import print_function
-from os.path import join
+
 from os import listdir
+from os.path import join
+
 import numpy as np
-import data_utils
 
-data_dir='/home/sym-gtu/Data/NTU/NTUDemo/'
+import train_test_splitter,helpers
 
-def read():
+
+def read(data_dir,split=False):
     print('Loading NTU 3D Data, data directory %s' % data_dir)
     data,labels,lens=[],[],[]
     filenames = []
@@ -39,14 +41,14 @@ def read():
                         a_frame.append(float(jointinfo[1]))  # y
                         a_frame.append(float(jointinfo[2]))  # z
                     if (b == 0):  # take one subject move
-                        a_frame=data_utils.frame_normalizer(np.asarray(a_frame))  #if you need
+                        a_frame= helpers.frame_normalizer(np.asarray(a_frame))  #if you need
                         #print(a_frame)
                         action.append(a_frame)
-                        one_act_label.append(data_utils.full_fname2_str(data_dir, file, 'A'))
+                        one_act_label.append(helpers.full_fname2_str(data_dir, file, 'A'))
 
 
             lens.append(len(action))
-            labels.append(data_utils.full_fname2_str(data_dir, file, 'A'))
+            labels.append(helpers.full_fname2_str(data_dir, file, 'A'))
             action = np.asarray(action).reshape(len(action),75)
             data.append(action)
             action_id += 1
@@ -57,9 +59,12 @@ def read():
     lens = np.asarray(lens)
 
     #if you need
-    data=data_utils.dataset_normalizer(data)
+    data= helpers.dataset_normalizer(data)
 
     print('data shape: %s, label shape: %s,lens shape %s' % (data.shape, labels.shape, lens.shape))
+    if split:
+        return train_test_splitter.test_train_splitter_NTU(data, labels, lens)
 
-    return data_utils.test_train_splitter_SYM_NTU(data, labels, lens)
+    else:
+        return data,labels,lens
 

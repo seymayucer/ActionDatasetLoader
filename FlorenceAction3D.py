@@ -1,10 +1,10 @@
-import numpy as np
 import collections
-import data_utils
-data_dir='/home/sym-gtu/Data/Florence_3D_Actions/Florence_dataset_WorldCoordinates.txt'
+import numpy as np
 
+import train_test_splitter,helpers
 
-def read():
+def read(data_dir,subject_id,split=False):
+
     print('Loading Florence Data, data directory %s'%data_dir)
     data, labels, lens,subjects = [], [], [],[]
     florence=np.loadtxt(data_dir)
@@ -14,11 +14,21 @@ def read():
     label_array=florence[:,2:3].flatten()
     counts=collections.Counter(frame_len)
 
-
     first,second=0,0
     for frame_num in counts:
         second+=counts[frame_num]
-        data.append(florence[first:second][:,3:])
+
+        #frame normalizer
+        action =florence[first:second][:,3:]
+        _action=[]
+        for frame in action:
+
+            frame=helpers.frame_normalizer(frame=frame)
+
+            _action.append(frame)
+
+        data.append(_action)
+
         lens.append(counts[frame_num])
         labels.append(int(label_array[first]))
         subjects.append(int(subject_array[first]))
@@ -28,6 +38,12 @@ def read():
     labels=np.asarray(labels)
     lens = np.asarray(lens)
     subjects=np.asarray(subjects)
+    print('data shape: %s, label shape: %s, action lens shape %s: %s' % (data.shape, labels.shape, lens.shape, subjects.shape))
+    data=helpers.normalizer(data)
+    labels=labels-1
 
-    print('data shape: %s, label shape: %s, action lens shape %s: %s'%(data.shape,labels.shape,lens.shape,subjects.shape))
-    return data_utils.test_train_splitter_MSR_FLOR(1, data, labels, lens, subjects)
+    if split:
+        return train_test_splitter.test_train_splitter_MSR_FLOR(subject_id, data, labels, lens, subjects)
+
+    else:
+        return data, labels, lens
