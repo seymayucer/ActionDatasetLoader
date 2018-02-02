@@ -1,5 +1,5 @@
 # Human Action Datasets Reader
-Public available human action datasets reader for everyone in python
+Public available human action datasets loader in python
 
 ## 	GTU3DActions : 
     
@@ -8,8 +8,6 @@ Public available human action datasets reader for everyone in python
 * 25 3D joints
 * 14 action class 
         
-        (turkish)
-	        
 1.  Kolları Açıp Kapama (37) 
 2.  Sağ El Sallama (40)
 3.  Sağa Sola Bel Esnetme (42)
@@ -109,7 +107,7 @@ Public available human action datasets reader for everyone in python
 60. walking apart from each other  
         
 ## MSRAction3D:
-        
+
 * 567 actions
 * 10  subjects
 * 20  3D joints
@@ -143,7 +141,7 @@ Public available human action datasets reader for everyone in python
 * 15  3D joints
 * 9   action class 
 
-1. wave, 
+1. wave 
 2. drink from a bottle
 3. answer 
 4. clap 
