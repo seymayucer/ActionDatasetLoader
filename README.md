@@ -7,7 +7,22 @@ Public available human action datasets loader in python
 * 8 subjects
 * 25 3D joints
 * 14 action class 
-        
+ 
+1.  Opening and Closing the Arms (37)
+2.  Right Handed Shaking (40)
+3.  Right and Left Waist Stretch (42)
+4.  Walking (32)
+5.  Bend the leg left or right (25)
+6.  Bend the leg left or right (27)
+7.  Left Handed Shaking (38)
+8.  One right-left step (39)
+9.  Crouching (38)
+10. Standing on the Sandal Standing (39)
+11. Sit and Applause (39)
+12. Lower back (37)
+13. Right and Left 8-Step Motion (26)
+14. Neck Relaxation (49)  
+
 1.  Kolları Açıp Kapama (37) 
 2.  Sağ El Sallama (40)
 3.  Sağa Sola Bel Esnetme (42)
@@ -23,21 +38,6 @@ Public available human action datasets loader in python
 13. Sağa Sola 8 Adimlik Hareket (26)
 14. Boyun Gevsetme (49)  
 
-1.  Opening and Closing the Arms (37)
-2.  Right Handed Shaking (40)
-3.  Right and Left Waist Stretch (42)
-4.  Walking (32)
-5.  Bend the leg left or right (25)
-6.  Bend the leg left or right (27)
-7.  Left Handed Shaking (38)
-8.  One right-left step (39)
-9.  Crouching (38)
-10. Standing on the Sandal Standing (39)
-11. Sit and Applause (39)
-12. Lower back (37)
-13. Right and Left 8-Step Motion (26)
-14. Neck Relaxation (49)          
-    
 ## NTU RGB+D : 
 
 * 56,880 actions
