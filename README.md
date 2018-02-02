@@ -22,21 +22,7 @@ Public available human action datasets loader in python
 12. Lower back (37)
 13. Right and Left 8-Step Motion (26)
 14. Neck Relaxation (49)  
-
-1.  Kolları Açıp Kapama (37) 
-2.  Sağ El Sallama (40)
-3.  Sağa Sola Bel Esnetme (42)
-4.  Yürüme (32)
-5.  Ayak Esnetme sağ veya sol (25)
-6.  Ayak Esnetme sağ veya sol (27)
-7.  Sol El Sallama (38)
-8.  One sağ sol Adim Gitme (39)
-9.  Çömelme (38)
-10. Sandalyede Oturup Kalkma (39)
-11. Oturup Alkışlama (39)
-12. Bel Cevirme (37)
-13. Sağa Sola 8 Adimlik Hareket (26)
-14. Boyun Gevsetme (49)  
+ 
 
 ## NTU RGB+D : 
 
